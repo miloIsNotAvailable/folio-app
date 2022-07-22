@@ -10,5 +10,8 @@ export default defineConfig({
         app: './index.html'
       }
     }
+  },
+  optimizeDeps: {
+    include: [ './index.html', './src', './public' ]
   }
 })
