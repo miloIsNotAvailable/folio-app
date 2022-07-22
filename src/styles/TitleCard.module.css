@@ -3,7 +3,7 @@
     grid-template-rows: 50% 50%;
     position: absolute;
     width: 100%;
-    height: 100%;
+    height: 80%;
     color: white;
     font-family: 'Gosha Sans';
     font-weight: normal;
@@ -11,31 +11,54 @@
     white-space: pre-wrap;
 }
 
-.title_card_wrap::after {
-    position: absolute;
+.title_card_line {
     position: absolute;
     content: "";
     background-color: white;
-    width: calc( 100% - 9ch - 5ch );
-    left: 5ch;
+    width: calc(100% - 1rem - 14ch);
+    left: calc( 1rem + 5ch );
     top: 50%;
     transform: translate(0, -50%);
     height: 2px;
-    place-self: start;
-    /* justify-self: center; */
+    place-self: center;
 }
 
 .title_card_upper {
     display: flex;
     align-items: end;
+    align-self: flex-end;
+    height: calc(1rem + 10vw);
+    max-height: calc(1rem + 10vw);
+    overflow: hidden;
+}
+
+.title_card_upper > p, .title_card_bottom > p {
+    margin: 0;
 }
 
 .title_card_bottom {
     display: flex;
     align-items: flex-start;
     justify-content: flex-end;
+    align-self: flex-start;
+    height: calc(1rem + 11vw);
+    max-height: calc(1rem + 11vw);
+    overflow: hidden;
 }
 
 .title_card_bottom, .title_card_upper {
     margin: 2rem 1rem;
+}
+
+.title_card_footer {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-100%, 0);
+    font-family: 'Radio Grotesk';
+    font-size: 1vw;
+    font-weight: normal;
+    text-align: center;
+    max-height: 2vw;
+    overflow: hidden;
 }

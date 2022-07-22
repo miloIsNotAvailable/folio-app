@@ -27,8 +27,15 @@ body {
   src: url( './fonts/PPGoshaSans-Bold.otf' ), url( './fonts/PPGoshaSans-Regular.otf' );
   font-weight: bold;
 }
+
 @font-face {
   font-family: 'Gosha Sans';
   src: url( './fonts/PPGoshaSans-Regular.otf' );
   font-weight: normal;
+}
+
+@font-face {
+  font-family: 'Radio Grotesk';
+  src: url( './fonts/PPRadioGrotesk-Regular.otf' );
+  /* font-weight: normal; */
 }
