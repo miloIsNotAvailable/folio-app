@@ -5,7 +5,7 @@
   "main": "server.ts",
   "scripts": {
     "preview": "vite preview",
-    "build": "npx tsc",
+    "build": "\"vite build\" \"npx tsc\"",
     "start": "node dist/server.js",
     "dev": "concurrently \"npx tsc --watch\" \"nodemon -q dist/server.js\""
   },
