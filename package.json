@@ -5,7 +5,6 @@
   "main": "server.ts",
   "scripts": {
     "preview": "vite preview",
-    "build": "\"vite\" \"npx tsc\"",
     "build:client": "vite build --outDir dist/client",
     "build:server": "vite build --outDir dist/server --ssr src/main.tsx",
     "start": "node dist/server.js",
