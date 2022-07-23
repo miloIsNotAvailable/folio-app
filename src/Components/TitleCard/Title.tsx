@@ -51,9 +51,9 @@ const Title: FC = () => {
                     delay: 1.8,
                     ease: [ 0.850, -0.015, 0.360, 0.980 ]
                 } }
-                initial={ { transform: 'translate( 0, 100% )' } }
+                initial={ { transform: 'translate( 0, 110% )' } }
                 animate={ { transform: 'translate( 0, 0% )' } }
-                exit={ { transform: 'translate( 0, -100% )' } }  
+                exit={ { transform: 'translate( 0, -110% )' } }  
             >
                 {"scroll down ↓"}
             </motion.p>

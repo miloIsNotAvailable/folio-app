@@ -1,8 +1,7 @@
 import { AnimatePresence } from "framer-motion";
 import { FC } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
-import BlobCard from "../BlobCard/BlobCard";
-import TitleCard from "../TitleCard";
+import Home from "./Home";
 
 const Pages: FC = () => {
 
@@ -11,12 +10,7 @@ const Pages: FC = () => {
     return (
         <AnimatePresence exitBeforeEnter >
             <Routes key={ location.pathname } location={ location }>
-                <Route path="/" element={ 
-                <div>
-                    <TitleCard/> 
-                    <BlobCard/>
-                </div>
-                }/>
+                <Route path="/" element={ <Home/> }/>
                 <Route path="/home" element={ <div>hey</div> }/>
             </Routes>
         </AnimatePresence>

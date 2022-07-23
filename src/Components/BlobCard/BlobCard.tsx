@@ -1,17 +1,27 @@
-import { FC, useCallback, useEffect, useRef } from "react";
+import { FC, useCallback, useEffect, useRef, useState } from "react";
 import { styles } from "./BlobCardStyles";
 import { Scene, PerspectiveCamera, WebGLRenderer, BoxGeometry, MeshBasicMaterial, Mesh, PlaneGeometry, ShaderMaterial, Vector2 } from 'three'
 import { frag, vert } from "../../constants/shaders";
+import { motion } from 'framer-motion'
 
 const BlobCard: FC = () => {
 
     const blobRef = useRef<HTMLDivElement | null>( null )
+    const [ { height, width }, setParams ] = useState<{ width: number, height: number }>( { width: 0, height: 0 } )
+
+    useEffect( () => {
+        if( !blobRef.current ) return
+        setParams( {
+            width: blobRef.current!.offsetWidth,
+            height: blobRef.current!.offsetHeight,
+        } )
+    }, [ blobRef.current?.offsetWidth ] )
 
     useEffect( () => {
         if( !blobRef.current ) return
 
-        const width = blobRef.current.offsetWidth;
-        const height = blobRef.current.offsetHeight;
+        // const width = blobRef.current.offsetWidth;
+        // const height = blobRef.current.offsetHeight;
 
         const scene = new Scene()
         const camera = new PerspectiveCamera( 
@@ -54,11 +64,12 @@ const BlobCard: FC = () => {
     }, [ blobRef.current ] )
 
     return (
-        <div 
-            ref={ blobRef }
-            className={ styles.blob_card_wrap }
-        >
-
+        <div className={ styles.blob_card }>
+            <div
+                ref={ blobRef }
+                className={ styles.blob_card_wrap }
+            >
+            </div>
         </div>
     )
 }

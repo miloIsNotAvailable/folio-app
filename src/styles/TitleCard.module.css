@@ -3,7 +3,7 @@
     grid-template-rows: 50% 50%;
     position: relative;
     width: 100%;
-    min-height: 80%;
+    height: 100%;
     color: white;
     font-family: 'Gosha Sans';
     font-weight: normal;
@@ -51,18 +51,18 @@
 }
 
 .title_card_footer {
-    /* position: absolute; */
+    position: absolute;
     display: grid;
-    /* bottom: 0; */
-    /* left: 50%; */
-    /* transform: translate(-100%, 0); */
+    bottom: 0;
+    left: 50%;
+    transform: translate(-100%, 0);
     font-family: 'Radio Grotesk';
     font-size: 1vw;
     font-weight: normal;
     text-align: center;
     align-items: center;
     justify-content: center;
-    height: 2vw;
-    max-height: 2vw;
+    height: 3vw;
+    max-height: 2.5vw;
     overflow: hidden;
 }
