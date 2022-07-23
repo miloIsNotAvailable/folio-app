@@ -1,6 +1,7 @@
-import { FC } from "react";
+import { FC, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "./NavCardStyles";
+import { motion, useScroll } from 'framer-motion'
 
 type redirects = "/projects" | "/about" | "/contact"
 type titles = "projects" | "about" | "contact"
@@ -17,7 +18,12 @@ const Redirect: FC<RedirectProps> = ( {
 } ) => {
 
     return (
-        <div className={ styles.nav_redirect_wrap }>
+        <motion.div 
+            className={ styles.nav_redirect_wrap }
+            initial={ { opacity: 0, transform: 'translate(0, 100%)' } }
+            whileInView={ { opacity: 1, transform: 'translate(0, 0)' } }
+            exit={ { opacity: 0, transform: 'translate(0, -100%)' } }
+        >
             <Link 
                 to={ to as string }
                 className={ styles.nav_redirect_text }
@@ -25,11 +31,11 @@ const Redirect: FC<RedirectProps> = ( {
                 <div>
                     { title }
                 </div>
-                <div>
+                <div className={ styles.arrow }>
                     {"→"}
                 </div>
             </Link>
-        </div>
+        </motion.div>
     )
 }
 
