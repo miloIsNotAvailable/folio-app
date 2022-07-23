@@ -44,9 +44,7 @@ const Title: FC = () => {
                     {"I like \nmaking stuff"}
                 </motion.p>
             </div>
-            <motion.div 
-                className={ styles.title_card_footer }  
-            >
+            <div className={ styles.title_card_footer }  >
             <motion.p
                 transition={ { 
                     duration: 1,
@@ -59,7 +57,7 @@ const Title: FC = () => {
             >
                 {"scroll down ↓"}
             </motion.p>
-            </motion.div>
+            </div>
         </div>
     )
 }
