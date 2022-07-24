@@ -2,6 +2,7 @@ import { FC, MouseEvent, useRef, useState } from "react";
 import ProjectRedirect from "./ProjectRedirect";
 import { styles } from "./SelectedProjectsStyles";
 import { motion } from "framer-motion";
+import { useMouse } from "../../hooks/useMouse";
 
 const SelectedProjectCard: FC = () => {
 
@@ -11,18 +12,13 @@ const SelectedProjectCard: FC = () => {
         { to: '/docsapp', title: 'docs\napp', desc: 'google docs, that can generate text using LSTM RNN ai model.' },
     ]
 
-    const [ { pageX, pageY }, setMouseCoords ] = useState<{ pageX: number, pageY: number }>( { pageX: 0, pageY: 0 } )
     const ref = useRef<HTMLDivElement | null>( null )
-
-    const getMouseCoords: 
-    ( e: MouseEvent<HTMLDivElement> ) => void = ( { nativeEvent, pageX, pageY } ) => {
-        setMouseCoords( { pageX, pageY } )
-        console.log(  nativeEvent.offsetX, pageX, ref.current?.offsetLeft )
-    }
+    
+    const [ { pageX, pageY, mouseLeft } ] = useMouse<HTMLDivElement>( ref ) 
 
     return (
         <motion.div 
-            transition={ { delay: 1 } }
+            transition={ { delay: 1.8 } }
             exit={ { backgroundColor: 'var(--bg)' } }
             className={ styles.selected_projects_wrap }    
         >
@@ -37,15 +33,19 @@ const SelectedProjectCard: FC = () => {
             <div 
                 ref={ ref }
                 className={ styles.projects }
-                onMouseMove={ getMouseCoords }
+                // onMouseMove={ getMouseCoords }
             >
-                <div 
+                <motion.div
+                    initial={ { opacity: 0 } }
+                    whileInView={ { opacity: 1 } } 
+                    exit={ { opacity: 0 } }
                     style={ {
-                        left: ref.current?.offsetLeft ? pageX - ref.current!.offsetLeft - 50 + "px" : 0,
-                        top: ref.current?.offsetTop ? pageY - ref.current!.offsetTop - 100 + "px" : 0
+                        left: pageX,
+                        top: pageY,
+                        visibility: mouseLeft ? 'collapse' : 'visible'
                     } }
                     className={ styles.mouse }
-                >go to</div>
+                >go to</motion.div>
                 {
                     arr.map( ( { desc, title, to }, ind ) => (
                         <motion.div

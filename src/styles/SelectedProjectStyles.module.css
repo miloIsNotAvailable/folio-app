@@ -50,13 +50,17 @@
     background-size: 100% 200%;
     background-repeat: no-repeat;
     background-position: 0% -100%;
-    transition: all 500ms cubic-bezier(0.760, 0.265, 0.325, 0.665);
+    transition: all 500ms cubic-bezier(0.605, 0.180, 0.195, 0.925);
 }
 
 .project {
+    display: grid;
+    grid-template-rows: 100% auto;
     text-decoration: none;
     color: var(--bg);
     cursor: none;
+    width: 100%;
+    height: 100%;
 }
 
 .mouse {
@@ -77,16 +81,17 @@
 
 .project_desc {
     display: grid;
-    width: calc( 100% - 3rem );
+    width: calc( 100% - 2rem );
     height: calc( 100% - 2rem );
-    place-self: center;
+    justify-self: center;
     font-family: 'Radio Grotesk';
+    text-align: justify;
 }
 
 .project_title {
     display: flex;
     width: calc( 100% - 2rem );
-    place-self: center;
+    align-self: center;
     font-size: 5vw;
     white-space: pre-wrap;
 }
