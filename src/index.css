@@ -27,6 +27,11 @@ body {
   background-color: var(--bg);
 }
 
+a {
+  text-decoration: none;
+  color: var(--bg);
+}
+
 @font-face {
   font-family: 'Gosha Sans';
   src: url( './fonts/PPGoshaSans-Bold.otf' ), url( './fonts/PPGoshaSans-Regular.otf' );

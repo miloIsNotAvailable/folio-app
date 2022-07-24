@@ -1,6 +1,7 @@
 import { FC, MouseEvent, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "./SelectedProjectsStyles";
+import{ motion } from 'framer-motion'
 
 interface ProjectRedirectProps {
     to: string
@@ -17,16 +18,15 @@ const ProjectRedirect: FC<ProjectRedirectProps> = ( {
     return (
         <Link 
             to={ to } 
-            className={ styles.project_redirect_wrap }
+            className={ styles.project }
         >
-                <div className={ styles.border }/>
-                <div className={ styles.project_desc }>
-                    { desc }
-                </div>
-                <div className={ styles.project_title }>
-                    {"→\n"}
-                    { title }
-                </div>
+            <div className={ styles.project_desc }>
+                { desc }
+            </div>
+            <div className={ styles.project_title }>
+                {"→\n"}
+                { title }
+            </div>
         </Link>
     )
 }

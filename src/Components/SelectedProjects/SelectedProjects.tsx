@@ -1,6 +1,7 @@
 import { FC, MouseEvent, useRef, useState } from "react";
 import ProjectRedirect from "./ProjectRedirect";
 import { styles } from "./SelectedProjectsStyles";
+import { motion } from "framer-motion";
 
 const SelectedProjectCard: FC = () => {
 
@@ -20,12 +21,19 @@ const SelectedProjectCard: FC = () => {
     }
 
     return (
-        <div 
-        className={ styles.selected_projects_wrap }    
+        <motion.div 
+            transition={ { delay: 1 } }
+            exit={ { backgroundColor: 'var(--bg)' } }
+            className={ styles.selected_projects_wrap }    
         >
-            <div className={ styles.project_redirect_title }>
+            <motion.div 
+                initial={ { opacity: 0, transform: 'translate(-100%, 0)' } }
+                whileInView={ { opacity: 1, transform: 'translate(0, 0)' } }
+                exit={ { opacity: 0, transform: 'translate(-100%, 0)' } }
+                className={ styles.project_redirect_title }
+            >
                 {"selected \nprojects."}
-            </div>
+            </motion.div>
             <div 
                 ref={ ref }
                 className={ styles.projects }
@@ -40,16 +48,24 @@ const SelectedProjectCard: FC = () => {
                 >go to</div>
                 {
                     arr.map( ( { desc, title, to }, ind ) => (
-                        <ProjectRedirect 
-                            desc={ desc} 
-                            title={ title }
-                            to={ to } 
+                        <motion.div
+                            transition={ { delay: .5 + ind * .1 } }
+                            className={ styles.project_redirect_wrap }
+                            initial={ { opacity: 0, transform: 'translate( 0, 100% )' } }
+                            whileInView={ { opacity: 1, transform: 'translate( 0, 0% )' } }
+                            exit={ { opacity: 0, transform: 'translate( 0, -10% )' } }
                             key={ ind }
-                        />
+                        >
+                            <ProjectRedirect 
+                                desc={ desc} 
+                                title={ title }
+                                to={ to } 
+                            />
+                        </motion.div>
                     ) )
                 }
             </div>
-        </div>
+        </motion.div>
     )
 }
 
