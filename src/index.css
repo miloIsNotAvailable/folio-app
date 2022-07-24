@@ -12,6 +12,7 @@
   -webkit-text-size-adjust: 100%;
 
   --bg: #2E2E2E;
+  --pink: #FDAFC2;
 }
 
 body::-webkit-scrollbar {

@@ -20,9 +20,9 @@ const Redirect: FC<RedirectProps> = ( {
     return (
         <motion.div 
             className={ styles.nav_redirect_wrap }
-            initial={ { opacity: 0, transform: 'translate(0, 100%)' } }
+            initial={ { opacity: 0, transform: 'translate(-10%, 0)' } }
             whileInView={ { opacity: 1, transform: 'translate(0, 0)' } }
-            exit={ { opacity: 0, transform: 'translate(0, -100%)' } }
+            exit={ { opacity: 0, transform: 'translate(10%, 0)' } }
         >
             <Link 
                 to={ to as string }
