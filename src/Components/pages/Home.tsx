@@ -12,7 +12,7 @@ const Home: FC = () => {
     return (
         <div className={ styles.pages_wrap }>
             <TitleCard/> 
-            <BlobCard/>
+            {/* <BlobCard/> */}
             <NavCard/>
             <SelectedProjects/>
             <DescriptionCard/>
