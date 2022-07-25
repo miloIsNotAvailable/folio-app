@@ -22,9 +22,27 @@ const DescriptionCard: FC = () => {
                 } }
                 className={ styles.mouse }
             >{"see \nmore"}</motion.div>
-            <div className={ styles.desc }>
-                Lorem Ipsum is simply dummy text of the printing and typesetting <div className={ styles.circle }></div> industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s <div className={ styles.round }></div>
-            </div>
+            <motion.div 
+                className={ styles.desc }
+                transition={ { duration: .5 } }
+                initial={ { opacity: 0 } }
+                whileInView={ { opacity: 1 } }
+                exit={ { opacity: 0 } }
+            >
+                Lorem Ipsum is simply dummy text of the printing and typesetting <motion.div 
+                className={ styles.circle }
+                transition={ { delay: .5 } }
+                initial={ { opacity: 0 } }
+                whileInView={ { opacity: 1 } }
+                exit={ { opacity: 0 } }
+                ></motion.div> industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s <motion.div 
+                className={ styles.round }
+                transition={ { delay: 1 } }
+                initial={ { opacity: 0 } }
+                whileInView={ { opacity: 1 } }
+                exit={ { opacity: 0 } }
+                ></motion.div>
+            </motion.div>
         </Link>
     )
 }

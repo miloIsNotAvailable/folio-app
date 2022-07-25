@@ -11,6 +11,10 @@
     font-family: 'Radio Grotesk';
     margin: 0;
     color: var(--bg);
+    background: linear-gradient(white 50%, var(--bg) 50%);
+    background-size: 100% 200%;
+    background-repeat: no-repeat;
+    background-position: 0% 0%;
 }
 
 .project_redirect_title {
@@ -85,6 +89,7 @@
     height: calc( 100% - 2rem );
     justify-self: center;
     font-family: 'Radio Grotesk';
+    font-size: 1vw;
     text-align: justify;
 }
 

@@ -18,11 +18,12 @@ const SelectedProjectCard: FC = () => {
 
     return (
         <motion.div 
-            transition={ { delay: 1.8 } }
-            exit={ { backgroundColor: 'var(--bg)' } }
+            transition={ { delay: 1.8, ease: [0.605, 0.180, 0.195, 0.925] } }
+            exit={ { backgroundPosition: '0 100%' } }
             className={ styles.selected_projects_wrap }    
         >
             <motion.div 
+                transition={ { duration: .5, ease: [0.605, 0.180, 0.195, 0.925] } }
                 initial={ { opacity: 0, transform: 'translate(-100%, 0)' } }
                 whileInView={ { opacity: 1, transform: 'translate(0, 0)' } }
                 exit={ { opacity: 0, transform: 'translate(-100%, 0)' } }
@@ -49,7 +50,7 @@ const SelectedProjectCard: FC = () => {
                 {
                     arr.map( ( { desc, title, to }, ind ) => (
                         <motion.div
-                            transition={ { delay: .5 + ind * .1 } }
+                            transition={ { delay: .4 + ind * .1 } }
                             className={ styles.project_redirect_wrap }
                             initial={ { opacity: 0, transform: 'translate( 0, 100% )' } }
                             whileInView={ { opacity: 1, transform: 'translate( 0, 0% )' } }

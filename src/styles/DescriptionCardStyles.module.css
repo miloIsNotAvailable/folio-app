@@ -4,7 +4,7 @@
     place-items: center;
     width: 100%;
     height: 100vh;
-    background-origin: var(--bg);
+    background-color: var(--bg);
     cursor: none;
     color: white;
 }
