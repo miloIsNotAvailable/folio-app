@@ -19,6 +19,11 @@ const SelectedProjectCard: FC = () => {
     return (
         <motion.div 
             transition={ { delay: 1.8, ease: [0.605, 0.180, 0.195, 0.925] } }
+            initial={ { backgroundPosition: '0 100%' } }
+            whileInView={ { backgroundPosition: '0 0%', transition: {
+                duration: .5,
+                ease: [0.605, 0.180, 0.195, 0.925]
+            } } }
             exit={ { backgroundPosition: '0 100%' } }
             className={ styles.selected_projects_wrap }    
         >

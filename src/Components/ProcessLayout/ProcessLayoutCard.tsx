@@ -1,5 +1,6 @@
 import { FC } from "react";
 import { styles } from "./ProcessLayoutStyles";
+import { motion } from 'framer-motion'
 
 interface ProcessLayoutCardProps {
     title: string,
@@ -14,7 +15,10 @@ const ProcessLayoutCard: FC<ProcessLayoutCardProps> = ( {
 } ) => {
 
     return (
-        <div className={ styles.process_process_wrap } tabIndex={ 0 }>
+        <motion.div 
+            className={ styles.process_process_wrap } 
+            tabIndex={ 0 }
+        >
             <div className={ styles.process_process_card }>
                 <div className={ styles.process_process_title }>
                     { title } <sup>{`0${ ind }.`}</sup>
@@ -26,7 +30,7 @@ const ProcessLayoutCard: FC<ProcessLayoutCardProps> = ( {
                     { '0' + ind + "." }
                 </div>
             </div>
-        </div>
+        </motion.div>
     )
 }
 
