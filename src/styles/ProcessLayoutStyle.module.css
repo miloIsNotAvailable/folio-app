@@ -1,0 +1,105 @@
+.process_wrap {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    color: var(--bg);
+}
+
+.process_desc_wrap {
+    margin: 5rem;
+    display: flex;
+    flex-direction: column;
+    align-self: end;
+    width: clamp(45ch, 50%, 75ch);
+    height: fit-content;
+}
+
+.process_desc_title {
+    /* align-self: flex-start; */
+    font-size: 7vw;
+    font-family: 'Gosha Sans';
+    font-weight: bold;
+    margin: 4rem 0;
+}
+
+.process_desc_desc {
+    font-size: 1.5vw;
+    font-family: 'Radio Grotesk';
+    width: clamp(45ch, 50%, 75ch)
+}
+
+.process_process_wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: end;
+    width: 100%;
+    height: 100%;
+}
+
+.process_process_wrap {
+    position: relative;
+    display: grid;
+    width: 100%;
+    max-width: 10%;
+    overflow: hidden;
+    height: 100%;
+    justify-self: flex-end;
+    transition: all 600ms cubic-bezier(0.645, 0.550, 0.460, 0.930);
+    transition-timing-function: cubic-bezier(0.645, 0.550, 0.460, 0.930);
+}
+
+.process_process_card {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    /* position: absolute; */
+    justify-self: flex-start;
+    border-left: 1px solid var(--bg);
+    height: 100%;
+}
+
+.process_process_wrap:active, .process_process_wrap:focus {
+    background-color: var(--bg);
+    max-width: 100%;
+}
+
+.process_process_title {
+    font-family: 'Gosha Sans';
+    font-size: 2.5vw;
+    color: white;
+    opacity: 0;
+    margin: 2rem 1rem;
+}
+
+.process_process_desc {
+    font-family: 'Radio Grotesk';
+    color: white;
+    opacity: 0;
+    margin: 0 1rem;
+}
+
+.process_title_footer {
+    display: flex;
+    height: 100%;
+    align-items: flex-end;
+    /* justify-content: flex-end; */
+    font-family: 'Radio Grotesk';
+    color: var(--bg);
+    font-size: 2vw;
+}
+
+.process_process_wrap:active .process_title_footer, .process_process_wrap:focus .process_title_footer {
+    color: white;
+}
+
+.process_process_wrap:active .process_process_title, 
+.process_process_wrap:focus .process_process_title,
+.process_process_wrap:active .process_process_desc, 
+.process_process_wrap:focus .process_process_desc 
+{
+    opacity: 1;
+    color: white;
+}
