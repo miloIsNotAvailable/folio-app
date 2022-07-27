@@ -53,7 +53,7 @@ const Title: FC = () => {
                 } }
                 initial={ { transform: 'translate( 0, 110% )' } }
                 animate={ { transform: 'translate( 0, 0% )' } }
-                exit={ { transform: 'translate( 0, -110% )' } }  
+                exit={ { transform: 'translate( 0, 110% )' } }  
             >
                 {"scroll down ↓"}
             </motion.p>

@@ -33,6 +33,10 @@ a {
   /* color: var(--bg); */
 }
 
+#Ellipse10 {
+  transform-origin: 50% 50%;
+}
+
 @font-face {
   font-family: 'Gosha Sans';
   src: url( './fonts/PPGoshaSans-Bold.otf' ), url( './fonts/PPGoshaSans-Regular.otf' );

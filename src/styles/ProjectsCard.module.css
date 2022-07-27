@@ -1,0 +1,48 @@
+.projects_card_wrap {
+    position: relative;
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    /* background-color: white; */
+    background: linear-gradient( to left, white 50%, var(--bg) 50% );
+    background-size: 200% 100%;
+    background-position: -100% 0;
+    color: var(--bg);
+}
+
+.projects_card_title {
+    display: flex;
+    align-self: flex-end;
+    justify-content: start;
+    font-family: 'Gosha Sans';
+    font-size: 5vw;
+    font-weight: bold;
+    margin: 1rem;
+    width: fit-content;
+    height: fit-content;
+    max-width: fit-content;
+    max-height: fit-content;
+    overflow: hidden;
+}
+
+.projects_card_footer {
+    display: flex;
+    align-self: flex-end;
+    justify-content: end;
+    font-family: 'Radio Grotesk';
+    font-size: 1vw;
+    font-weight: bold;
+    width: 100%;
+    height: fit-content;
+    margin: .5rem;
+    color: var(--bg);
+    max-height: fit-content;
+    overflow: hidden;
+}
+
+.projects_img {
+    position: absolute;
+    --icon-size: 8vw;
+    width: var(--icon-size);
+    height: var(--icon-size);
+}
