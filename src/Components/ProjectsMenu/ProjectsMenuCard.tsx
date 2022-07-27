@@ -1,7 +1,8 @@
 import { Dispatch, FC, SetStateAction, useRef, useState } from "react";
 import { styles } from "./ProjectsMenuStyles";
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { useProjectMenuContext } from "../../contexts/ProjectsMenuContext";
+import ProjectMenuDesc from "./ProjectsMenuDesc";
 
 interface ProjectsMenuCardProps {
     title: string
@@ -33,7 +34,9 @@ const ProjectsMenuCard: FC<ProjectsMenuCardProps> = ( {
                 </div>
                 <div>
                     {selected === title ? 
-                    <div onClick={ () => {
+                    <div
+                        style={ { cursor: 'pointer' } }
+                        onClick={ () => {
                             ref.current?.blur()
                             setSelected( "" ); 
                         } }>
@@ -45,6 +48,10 @@ const ProjectsMenuCard: FC<ProjectsMenuCardProps> = ( {
                     }
                 </div>
             </div>
+            {
+                selected === title &&
+                <ProjectMenuDesc/>
+            }
         </motion.div>
     )
 }
