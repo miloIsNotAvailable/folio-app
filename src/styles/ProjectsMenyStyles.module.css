@@ -1,0 +1,52 @@
+.projects_menu_wrap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+    color: var(--bg);
+}
+
+.projects_menu_card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    height: 33%;
+    max-height: 33%;
+    overflow: hidden;
+    border-bottom: 1px solid var(--bg);
+    background: linear-gradient( to left, white 50%, var(--bg) 50% );
+    background-size: 200% 100%;
+    background-position: -100% 0;
+    transition: all 800ms cubic-bezier(0.595, 0.225, 0.440, 0.840);
+}
+
+.projects_menu_card:hover {
+    background-position: 0% 0;
+    color: white;
+}
+
+.projects_menu_card:active, .projects_menu_card:focus {
+    width: 100%;
+    height: 100%;
+    max-height: 100%;    
+    background-position: 0% 0;
+    color: white;
+}
+
+.projects_menu_card_title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: calc(100% - 2rem);
+    height: 100%;
+    font-family: 'Radio Grotesk';
+    font-size: 5vw;
+    transition: all 800ms ease;
+}
+.projects_menu_card:active .projects_menu_card_title, .projects_menu_card:focus .projects_menu_card_title {
+    height: 20%
+}
