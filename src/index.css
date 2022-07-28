@@ -13,6 +13,9 @@
 
   --bg: #2E2E2E;
   --pink: #FDAFC2;
+  --brown: #D1BAAE;
+  --dark-green: #92C6A6;
+  --dark-blue: #8EC1C5;
 }
 
 body::-webkit-scrollbar {

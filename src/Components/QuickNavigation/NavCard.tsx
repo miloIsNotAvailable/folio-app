@@ -6,7 +6,7 @@ const NavCard: FC = () => {
 
     const arr = [
         { to: "/projects", title: "projects" },
-        { to: "/about me", title: "about me" },
+        { to: "/aboutme", title: "about me" },
         { to: "/contact", title: "contact" },
     ]
 
