@@ -18,6 +18,8 @@ const AboutCardNavbar: FC = () => {
         desc: ""
     } )
 
+    console.log( selected )
+
     return (
         <div className={ styles.about_navbar_wrap }>
             {
