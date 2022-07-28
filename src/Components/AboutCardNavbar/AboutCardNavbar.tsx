@@ -5,9 +5,9 @@ import AboutCardNavbarTile from './AboutCardNavbarTile';
 const AboutCardNavbar: FC = () => {
 
     const arr = [
-        { title: 'about me', desc: 'lorem ipsum' },
-        { title: 'education', desc: 'ipsum' },
-        { title: 'experience', desc: 'lorem' },
+        { title: 'about me', desc: 'lorem ipsum', bg: 'var(--dark-green)' },
+        { title: 'education', desc: 'ipsum', bg: 'var(--brown)' },
+        { title: 'experience', desc: 'lorem', bg: 'var(--dark-blue)' },
     ] 
 
     const [ selected, setSelected ] = useState<{ 
@@ -23,10 +23,11 @@ const AboutCardNavbar: FC = () => {
     return (
         <div className={ styles.about_navbar_wrap }>
             {
-                arr.map( ( { desc, title } ) =>(
+                arr.map( ( { desc, title, bg } ) =>(
                     <AboutCardNavbarTile
                         title={ title }
                         desc={ desc }
+                        bg={ bg }
                         onClick={ () => setSelected( { desc, title } ) }
                     />
                 ) )

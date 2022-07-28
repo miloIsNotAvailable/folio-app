@@ -37,3 +37,84 @@
     width: calc(100% - 2rem);
     height: 100%;
 }
+
+.about_navbar_modal {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 70% 30%;
+    width: 100%;
+    height: 100vh;
+    max-height: 0vh;
+    overflow: hidden;
+    top: 0;
+    background-color: var(--dark-green);
+    transition: all 500ms cubic-bezier(0.755, 0.240, 0.335, 0.775)
+}
+
+.about_navbar_tile:active .about_navbar_modal,
+.about_navbar_tile:focus .about_navbar_modal{ 
+    max-height: 100vh;
+}
+
+.about_navbar_modal_content_wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    align-items: flex-start;
+    justify-content: flex-end;
+    place-self: center;
+    width: calc(100% - 3rem);
+    height: calc(100% - 3rem);
+}
+
+.about_navbar_modal_title {
+    font-family: 'Gosha Sans';
+    font-weight: bold;
+    font-size: 2vw;
+}
+
+.about_navbar_modal_content {
+    font-size: 1vw;
+}
+
+.about_navbar_modal_nav {
+    display: flex;
+    justify-self: flex-end;
+    width: 100%;
+    max-width: 0%;
+    overflow: hidden;
+    height: 100%;
+    background-color: var(--bg);
+    transition: all 500ms cubic-bezier(0.755, 0.240, 0.335, 0.775);
+    transition-delay: 500ms;
+}
+
+.about_navbar_tile:active .about_navbar_modal_nav,
+.about_navbar_tile:focus .about_navbar_modal_nav{ 
+    max-width: 100%;
+}
+
+.modal_close {
+    cursor: pointer;
+    position: absolute;
+    display: grid;
+    place-items: center;
+    width: 7vw;
+    height: 7vw;
+    left: calc( 70% - 3.5vw );
+    top: 3rem;
+    background-color: white;
+    border-radius: 50%;
+    z-index: 2;
+    color: var(--bg);
+    font-size: 3vw;
+    transform: translate(0, -200%);
+    transition: all 500ms ease;
+    transition-delay: 500ms;
+}
+
+.about_navbar_tile:active .modal_close,
+.about_navbar_tile:focus .modal_close{ 
+    transform: translate(0, 0);
+}
+
