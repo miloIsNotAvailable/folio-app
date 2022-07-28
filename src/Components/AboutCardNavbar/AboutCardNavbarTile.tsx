@@ -1,4 +1,4 @@
-import { FC } from "react";
+import { FC, useRef } from "react";
 import AboutCardModal from "./AboutCardModal";
 import { styles } from "./AboutCardNavbarStyles";
 
@@ -16,11 +16,15 @@ const AboutCardNavbarTile: FC<AboutCardNavbarTileProps> = ( {
     bg
 } ) => {
 
+    const ref = useRef<HTMLDivElement | null>( null )
+    console.log( ref )
+
     return (
         <div 
             className={ styles.about_navbar_tile } 
             tabIndex={ 2 }
             onClick={ onClick }
+            ref={ ref }
       >
             <div className={  styles.about_navbar_tile_title }>
                 <div>
@@ -33,6 +37,7 @@ const AboutCardNavbarTile: FC<AboutCardNavbarTileProps> = ( {
             <AboutCardModal 
                 title={ title }
                 desc={ desc }
+                onClick={ () => ref.current?.blur() }
                 style={ {
                     backgroundColor: bg
                 } }

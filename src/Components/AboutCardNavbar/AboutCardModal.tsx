@@ -1,16 +1,18 @@
-import { FC, HTMLAttributes } from "react";
+import { FC, HTMLAttributes, MutableRefObject } from "react";
 import { styles } from "./AboutCardNavbarStyles";
 
 interface AboutCardModalProps {
     desc: string, 
     title: string,
+    onClick: () => void,
     style?: HTMLAttributes<HTMLDivElement>["style"]
 }
 
 const AboutCardModal: FC<AboutCardModalProps> = ( {
     desc,
     title,
-    style
+    style,
+    onClick
 } ) => {
 
     return (
@@ -26,7 +28,10 @@ const AboutCardModal: FC<AboutCardModalProps> = ( {
                     { desc } 
                 </div>
             </div>
-            <div className={ styles.modal_close }>
+            <div 
+                className={ styles.modal_close }
+                onClick={ onClick }
+            >
                 ✖
             </div>
             <div className={ styles.about_navbar_modal_nav }>
