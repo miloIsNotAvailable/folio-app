@@ -1,4 +1,4 @@
-import { FC } from 'react';
+import { FC, useState } from 'react';
 import { styles } from './AboutCardNavbarStyles';
 import AboutCardNavbarTile from './AboutCardNavbarTile';
 
@@ -10,6 +10,14 @@ const AboutCardNavbar: FC = () => {
         { title: 'experience', desc: 'lorem' },
     ] 
 
+    const [ selected, setSelected ] = useState<{ 
+        title: string, 
+        desc: string 
+    }>( {
+        title: '',
+        desc: ""
+    } )
+
     return (
         <div className={ styles.about_navbar_wrap }>
             {
@@ -17,6 +25,7 @@ const AboutCardNavbar: FC = () => {
                     <AboutCardNavbarTile
                         title={ title }
                         desc={ desc }
+                        onClick={ () => setSelected( { desc, title } ) }
                     />
                 ) )
             }
