@@ -1,1 +1,1 @@
-export { default } from './ABoutCardNavbar'
+export { default } from './AboutCardNavbar'
