@@ -3,18 +3,26 @@ import { styles } from "./ProjectsMenuStyles";
 import { AnimatePresence, motion } from 'framer-motion'
 import { useProjectMenuContext } from "../../contexts/ProjectsMenuContext";
 import ProjectMenuDesc from "./ProjectsMenuDesc";
+import { useProjectContext } from "../../contexts/ProjectsContext";
 
 interface ProjectsMenuCardProps {
     title: string
+    desc: string
+    img: string
+    link: string
     ind: number,
 }
 
 const ProjectsMenuCard: FC<ProjectsMenuCardProps> = ( { 
     title,
+    desc, 
+    img,
+    link,
     ind,
 } ) => {
 
-    const [ { selected, setSelected } ] = useProjectMenuContext()
+    const [ arr, { title: currentTitle }, setSelected ] = useProjectContext()
+    // const [ { selected, setSelected } ] = useProjectMenuContext()
     const ref = useRef<HTMLDivElement | null>( null )
 
     return (
@@ -25,10 +33,15 @@ const ProjectsMenuCard: FC<ProjectsMenuCardProps> = ( {
             animate={ { transform: 'translate( 0%, 0 )' } }
             exit={ { transform: 'translate( -100%, 0 )' } }
             tabIndex={ 1 }
-            onFocus={ () => setSelected( title ) }
-            onBlur={ () => setSelected( "" ) }
+            onFocus={ () => setSelected( { title, desc, img, link } ) }
+            onBlur={ () => setSelected( { 
+                title: "", 
+                desc: "", 
+                img: "",
+                link: "" 
+            } ) }
             style={ {
-                maxHeight: `${ !selected ? '33%' : selected !== title ? "0%" : '100%' }`
+                maxHeight: `${ !currentTitle ? '33%' : currentTitle !== title ? "0%" : '100%' }`
             } }
         >
             <div className={ styles.projects_menu_card_title }>
@@ -36,12 +49,17 @@ const ProjectsMenuCard: FC<ProjectsMenuCardProps> = ( {
                     { title }
                 </div>
                 <div>
-                    {selected === title ? 
+                    {currentTitle === title ? 
                     <div
                         style={ { cursor: 'pointer' } }
                         onClick={ () => {
                             ref.current?.blur()
-                            setSelected( "" ); 
+                            setSelected( { 
+                                title: "", 
+                                desc: "", 
+                                img: "",
+                                link: "" 
+                            } ); 
                         } }>
                         { '✖' }
                     </div>: 
@@ -52,7 +70,7 @@ const ProjectsMenuCard: FC<ProjectsMenuCardProps> = ( {
                 </div>
             </div>
             {
-                selected === title &&
+                currentTitle === title &&
                 <ProjectMenuDesc/>
             }
         </motion.div>

@@ -3,11 +3,13 @@ import { useDescContext } from "../../contexts/ProjectMenuDescContext";
 import { motion } from "framer-motion";
 import { styles } from "./ProjectsMenuStyles";
 import { Link, useNavigate } from "react-router-dom";
+import { useProjectContext } from "../../contexts/ProjectsContext";
 
 const ProjectMenuDesc: FC = () => {
 
-    const [ { desc, img, link } ] = useDescContext()
+    // const [ { desc, img, link } ] = useDescContext()
     const navigate = useNavigate()
+    const [ arr, { img, desc, link }, _ ] = useProjectContext()
 
     return (
         <motion.div className={ styles.project_menu_desc_wrap }>
