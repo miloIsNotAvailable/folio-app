@@ -21,6 +21,9 @@ const ProjectsMenuCard: FC<ProjectsMenuCardProps> = ( {
         <motion.div 
             ref={ ref } 
             className={ styles.projects_menu_card }
+            initial={ { transform: 'translate( -100%, 0 )' } }
+            animate={ { transform: 'translate( 0%, 0 )' } }
+            exit={ { transform: 'translate( -100%, 0 )' } }
             tabIndex={ 1 }
             onFocus={ () => setSelected( title ) }
             onBlur={ () => setSelected( "" ) }

@@ -1,6 +1,7 @@
-import { FC, useState } from 'react';
+import { FC, useEffect, useState } from 'react';
 import { styles } from './AboutCardNavbarStyles';
 import AboutCardNavbarTile from './AboutCardNavbarTile';
+import { motion } from 'framer-motion';
 
 const AboutCardNavbar: FC = () => {
 
@@ -18,10 +19,20 @@ const AboutCardNavbar: FC = () => {
         desc: ""
     } )
 
-    console.log( selected )
+    useEffect( () => {
+        window.scrollTo( {
+            left: 0,
+            top: 0
+        } )
+    }, [] )
 
     return (
-        <div className={ styles.about_navbar_wrap }>
+        <motion.div 
+            className={ styles.about_navbar_wrap }
+            initial={ { backgroundColor: "var(--bg)"} }
+            animate={ { backgroundColor: "white" } }
+            exit={ { backgroundColor: "var(--bg)"} }
+        >
             {
                 arr.map( ( { desc, title, bg } ) =>(
                     <AboutCardNavbarTile
@@ -32,7 +43,7 @@ const AboutCardNavbar: FC = () => {
                     />
                 ) )
             }
-        </div>
+        </motion.div>
     )
 }
 

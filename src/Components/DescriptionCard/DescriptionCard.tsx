@@ -10,7 +10,7 @@ const DescriptionCard: FC = () => {
     const [ { pageX, pageY, mouseLeft } ] = useMouse<HTMLAnchorElement>( ref ) 
 
     return (
-        <Link to={ "/about me" } className={ styles.desc_card_wrap } ref={ ref }>
+        <Link to={ "/aboutme" } className={ styles.desc_card_wrap } ref={ ref }>
             <motion.div
                 initial={ { opacity: 0 } }
                 whileInView={ { opacity: 1 } } 

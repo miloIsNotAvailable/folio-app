@@ -1,6 +1,7 @@
 import { FC, useRef } from "react";
 import AboutCardModal from "./AboutCardModal";
 import { styles } from "./AboutCardNavbarStyles";
+import { motion } from 'framer-motion'
 
 interface AboutCardNavbarTileProps {
     title: string,
@@ -17,10 +18,12 @@ const AboutCardNavbarTile: FC<AboutCardNavbarTileProps> = ( {
 } ) => {
 
     const ref = useRef<HTMLDivElement | null>( null )
-    console.log( ref )
 
     return (
-        <div 
+        <motion.div 
+            initial={ { opacity: 0 } }
+            animate={ { opacity: 1 } }
+            exit={ { opacity: 0 } }
             className={ styles.about_navbar_tile } 
             tabIndex={ 2 }
             onClick={ onClick }
@@ -42,7 +45,7 @@ const AboutCardNavbarTile: FC<AboutCardNavbarTileProps> = ( {
                     backgroundColor: bg
                 } }
              />
-        </div>
+        </motion.div>
     )
 }
 

@@ -4,10 +4,15 @@
     flex-direction: column;
     width: 100%;
     height: 100vh;
-    background-color: white;
+    /* background-color: white; */
+    /* background: linear-gradient( to left, white 50%, var(--bg) 50% ); */
+    /* background-size: 200% 100%; */
+    /* background-position: -100% 0; */
     color: var(--bg);
     font-family: 'Radio Grotesk';
     font-size: 5vw;
+    z-index: 1;
+
 }
 
 .about_navbar_tile {
@@ -19,6 +24,7 @@
     background: linear-gradient( to left, white 50%, var(--bg) 50% );
     background-size: 200% 100%;
     background-position: -100% 0;
+    /* z-index: 1; */
     transition: all 500ms cubic-bezier(0.755, 0.240, 0.335, 0.775)
 }
 
@@ -48,6 +54,7 @@
     overflow: hidden;
     top: 0;
     background-color: var(--dark-green);
+    /* z-index: 30; */
     transition: all 500ms cubic-bezier(0.755, 0.240, 0.335, 0.775)
 }
 
