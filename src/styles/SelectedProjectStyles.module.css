@@ -124,3 +124,56 @@
 .project_redirect_wrap:hover .project_title, .project_redirect_wrap:hover .project_desc {
     color: white;
 }
+@media  (max-width: 600px) {
+    .selected_projects_wrap {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 30% 70%;
+    }
+    .project_redirect_title {
+        font-size: 12vw;
+        align-items: center;
+    }
+    .projects {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-self: flex-start;
+        width: 100%;
+    }        
+    .project_redirect_wrap {
+        width: 100%;
+        grid-template-rows: auto;
+        border-left: 0px solid var(--bg);
+        border-bottom: 1px solid var(--bg);
+    }
+    .project {
+        display: grid;
+        grid-template-columns: 30% 70%;
+        /* flex-direction: row; */
+        text-decoration: none;
+        color: var(--bg);
+        cursor: none;
+        width: 100%;
+        height: 100%;
+    }
+    .project_title {
+        display: flex;
+        width: auto;
+        margin: .2rem;
+        align-self: center;
+        justify-self: center;
+        font-size: 6vw;
+        white-space: pre-wrap;
+        /* grid-row: auto; */
+        grid-row: 1;
+    }
+    .project_desc {
+        align-self: center;
+        height: fit-content;
+        font-size: 2.5vw;
+    }
+    .border {
+        width: 0
+    }
+}

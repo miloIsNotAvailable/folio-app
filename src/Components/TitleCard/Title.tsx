@@ -7,7 +7,7 @@ const Title: FC = () => {
     return (
         <div className={ styles.title_card_wrap }>
             <div className={ styles.title_card_upper }>
-                <motion.p 
+                <motion.div 
                     transition={ { 
                             duration: 1,
                             delay: .8,
@@ -18,7 +18,7 @@ const Title: FC = () => {
                     exit={ { transform: 'translate( 0, 100% )' } }
                 >
                     {"hey \nI'm milo"}
-                </motion.p>
+                </motion.div>
             </div>
             <motion.div 
                 className={ styles.title_card_line  } 
@@ -31,7 +31,7 @@ const Title: FC = () => {
                 exit={ { maxWidth: 0 } }
             />
             <div className={ styles.title_card_bottom }>
-                <motion.p
+                <motion.div
                     transition={ { 
                         duration: 1,
                         delay: .8,
@@ -42,10 +42,10 @@ const Title: FC = () => {
                     exit={ { transform: 'translate( 0, -100% )' } }    
                 >
                     {"I like \nmaking stuff"}
-                </motion.p>
+                </motion.div>
             </div>
             <div className={ styles.title_card_footer }  >
-            <motion.p
+            <motion.div
                 transition={ { 
                     duration: 1,
                     delay: 1.8,
@@ -56,7 +56,7 @@ const Title: FC = () => {
                 exit={ { transform: 'translate( 0, 110% )' } }  
             >
                 {"scroll down ↓"}
-            </motion.p>
+            </motion.div>
             </div>
         </div>
     )

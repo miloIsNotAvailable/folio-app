@@ -15,8 +15,9 @@
     display: flex;
     justify-content: center;
     width: 100%;
-    height: calc(33% - 2rem);
-    max-height: calc(33% - 2rem);
+    --nav-redirect-wrap-height: calc(33% - 2rem);
+    height: var(--nav-redirect-wrap-height);
+    max-height: var(--nav-redirect-wrap-height);
     overflow: hidden;
     background: linear-gradient(to left, var(--bg) 50%, white 50%);
     background-size: 200% 100%;
@@ -38,11 +39,11 @@
 .nav_redirect_text {
     display: flex;
     width: calc(100% - 2rem);
-    height: 100%;
-    max-height: 100%;
+    height: calc(100% - 1rem);
+    max-height: calc(100% - 1rem);;
     overflow: hidden;
     flex-direction: row;
-    align-items: center;
+    align-items: end;
     justify-content: space-between;
     font-family: 'Radio Grotesk';
     color: white;
@@ -66,4 +67,13 @@
 
 .nav_redirect_wrap:hover .arrow {
     transform: rotate(-45deg);
+}
+
+@media (max-width: 400px) {
+    .nav_redirect_wrap {
+        --nav-redirect-wrap-height: 20%;
+    } 
+    .nav_redirect_text {
+        font-size: 7vw;
+    }
 }
