@@ -110,3 +110,26 @@
     max-height: fit-content;
     overflow: hidden;
 }
+
+@media (max-width: 600px) {
+    .projects_menu_card_title {
+        font-size: 10vw;
+    }
+    .project_menu_desc_wrap {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        width: calc(100% - 2rem);
+        height: 60%;
+        gap: 3rem;
+    }    
+    .project_menu_desc_img {
+        grid-row: 2;
+    }
+    .project_menu_desc_title {
+        font-size: 6vw;
+    }
+    .project_menu_desc_redirect {
+        font-size: 2.5vw
+    }
+}

@@ -19,7 +19,7 @@ const NotesApp: FC = () => {
                 go back
             </Link>
             <ProjectLayout 
-                desc={ "notes app for creating notes as text, drawings, or images. Project was made using react (typescript), redux & redux's RTK Query, SQL simple with custom ORM, and plain graphql and express (typescript) for backend" } 
+                desc={ "notes app for creating notes as text, drawings, or images. Project was made using react (typescript), redux & redux's RTK Query, SQL with simple custom ORM, and plain graphql and express (typescript) for backend" } 
                 title={ "notes app" }
                 num={ '02' } 
                 img={ Img }   

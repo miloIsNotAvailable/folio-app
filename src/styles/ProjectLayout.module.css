@@ -64,7 +64,20 @@
 }
 
 .project_body_desc_wrap > * {
+    width: 100%;
+    max-width: clamp(45ch, 50%, 75ch);
     height: fit-content;
     max-height: fit-content;
     overflow: hidden;
+}
+@media (max-width: 600px) {
+    .project_body_wrap {
+        display: grid;
+        grid-template-columns: 100%;
+        grid-template-rows: 50% 50%;
+        gap: 3rem;
+    }
+    .project_body_desc_wrap {
+        grid-row: 1;
+    }
 }
