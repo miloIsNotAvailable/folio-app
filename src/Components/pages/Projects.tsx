@@ -4,6 +4,8 @@ import ProjectsCard from "../ProjectsCard";
 import ProjectsMenu from "../ProjectsMenu";
 import { arrType, ProjectsContextProvider } from "../../contexts/ProjectsContext";
 import { default as NotesApp } from '../../graphics/notesapp.png'
+import { default as ChatApp } from '../../graphics/chatapp.png'
+import { default as DocsApp } from '../../graphics/docsapp.png'
 
 const Projects: FC = () => {
 
@@ -15,9 +17,9 @@ const Projects: FC = () => {
     } )  
 
     const arr = [ 
-        { title: 'chat app', desc: 'lorem ipsum', img: NotesApp, link: "/notesapp" },
+        { title: 'chat app', desc: 'lorem ipsum', img: ChatApp, link: "/chatapp" },
         { title: 'notes app', desc: 'lorem ',  img: NotesApp, link: "/notesapp" },
-        { title: 'docs app', desc: 'ipsum',  img: NotesApp, link: "/notesapp" },
+        { title: 'docs app', desc: 'ipsum',  img: DocsApp, link: "/docsapp" },
     ]
 
     return (
