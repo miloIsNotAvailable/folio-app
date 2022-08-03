@@ -17,9 +17,9 @@ const Projects: FC = () => {
     } )  
 
     const arr = [ 
-        { title: 'chat app', desc: 'lorem ipsum', img: ChatApp, link: "/chatapp" },
-        { title: 'notes app', desc: 'lorem ',  img: NotesApp, link: "/notesapp" },
-        { title: 'docs app', desc: 'ipsum',  img: DocsApp, link: "/docsapp" },
+        { title: 'chat app', desc: 'chat app for sending messages, images and voice calling.', img: ChatApp, link: "/chatapp" },
+        { title: 'notes app', desc: 'notes app for creating notes as draiwngs, text, or images and sharing them with friends.',  img: NotesApp, link: "/notesapp" },
+        { title: 'docs app', desc: 'docs app that uses LSTM model for text generation.',  img: DocsApp, link: "/docsapp" },
     ]
 
     return (

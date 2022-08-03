@@ -5,9 +5,10 @@ import { motion } from 'framer-motion'
 
 interface ProjectDescProps {
     desc: string
+    link: string
 }
 
-const ProjectDesc: FC<ProjectDescProps> = ( { desc } ) => {
+const ProjectDesc: FC<ProjectDescProps> = ( { desc, link } ) => {
 
     return (
         <div className={ styles.project_body_desc_wrap }>
@@ -39,7 +40,7 @@ const ProjectDesc: FC<ProjectDescProps> = ( { desc } ) => {
                     { desc }
                 </motion.div>
             </div>
-                <a href={ 'https://notes-app-three-beta.vercel.app/' }>
+                <a href={ link }>
                     <motion.div
                         transition={ { 
                             duration: 1, 
