@@ -80,4 +80,11 @@
     .project_body_desc_wrap {
         grid-row: 1;
     }
+    .project_body_desc_title {
+        font-size: 5vw;
+    }
+    .project_body_desc_body {
+        font-size: 2vw;
+        max-width: clamp(45ch, 50%, 75ch);
+    }
 }

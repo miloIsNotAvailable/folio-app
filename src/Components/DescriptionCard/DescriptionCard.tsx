@@ -29,13 +29,13 @@ const DescriptionCard: FC = () => {
                 whileInView={ { opacity: 1 } }
                 exit={ { opacity: 0 } }
             >
-                Lorem Ipsum is simply dummy text of the printing and typesetting <motion.div 
+                I started webdev in february of 2021, and I loved it ever since. From <motion.div 
                 className={ styles.circle }
                 transition={ { delay: .5 } }
                 initial={ { opacity: 0 } }
                 whileInView={ { opacity: 1 } }
                 exit={ { opacity: 0 } }
-                ></motion.div> industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s <motion.div 
+                ></motion.div> designing websites and web apps, to actually creating them, and making them work... <motion.div 
                 className={ styles.round }
                 transition={ { delay: 1 } }
                 initial={ { opacity: 0 } }
