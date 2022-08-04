@@ -4,3 +4,31 @@
     /* grid-template-rows: auto auto auto; */
     grid-auto-rows: auto;
 }
+
+.navbar_wrap {
+    position: absolute;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    width: 100%;
+    height: 4rem;
+    z-index: 100;
+    /* mix-blend-mode: difference; */
+}
+
+.navbar_items {
+    grid-column: 2;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.navbar_item {
+    display: flex;
+    width: 33.33%;
+    background-color: white;
+    /* filter: invert(100); */
+    color: var(--bg);
+    align-items: flex-end;
+    font-family: 'Radio Grotesk';
+    padding: .2rem;
+}

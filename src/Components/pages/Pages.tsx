@@ -7,6 +7,8 @@ import Contact from "./Contact";
 import DocsApp from "./DocsApp";
 import Home from "./Home";
 import NotesApp from "./NotesApp";
+import PagesNavbar from "./PagesNavbar";
+import { styles } from "./PagesStyles";
 import Projects from "./Projects";
 
 const Pages: FC = () => {
@@ -15,6 +17,7 @@ const Pages: FC = () => {
 
     return (
         <AnimatePresence exitBeforeEnter >
+            <PagesNavbar/>
             <Routes key={ location.pathname } location={ location }>
                 <Route path="/" element={ <Home/> }/>
                 <Route path="/chatapp" element={ <ChatApp/> }/>
