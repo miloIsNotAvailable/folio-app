@@ -6,9 +6,10 @@ import { motion } from 'framer-motion'
 interface ProjectDescProps {
     desc: string
     link: string
+    git?: string
 }
 
-const ProjectDesc: FC<ProjectDescProps> = ( { desc, link } ) => {
+const ProjectDesc: FC<ProjectDescProps> = ( { desc, link, git } ) => {
 
     return (
         <div className={ styles.project_body_desc_wrap }>
@@ -52,6 +53,20 @@ const ProjectDesc: FC<ProjectDescProps> = ( { desc, link } ) => {
                         exit={ { transform: 'translate(0, -100%)' } } 
                     >
                         see project →                
+                    </motion.div>
+                </a>
+                <a href={ git }>
+                    <motion.div
+                        transition={ { 
+                            duration: 1, 
+                            ease: [ 0.535, 0.300, 0.185, 0.760 ],
+                            delay: 1.7
+                        } }
+                        initial={ { transform: 'translate(0, 100%)' } } 
+                        animate={ { transform: 'translate(0, 0%)' } } 
+                        exit={ { transform: 'translate(0, -100%)' } } 
+                    >
+                        see github code →                
                     </motion.div>
                 </a>
         </div>

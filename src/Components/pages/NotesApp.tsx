@@ -15,15 +15,13 @@ const NotesApp: FC = () => {
 
     return (
         <div className={ styles.pages_wrap }>
-            <Link to="/">
-                go back
-            </Link>
             <ProjectLayout 
                 desc={ "notes app for creating notes as text, drawings, or images. Project was made using react (typescript), redux & redux's RTK Query, SQL with simple custom ORM, and plain graphql and express (typescript) for backend" } 
                 title={ "notes app" }
                 num={ '02' } 
                 img={ Img } 
                 link={ "https://notes-app-three-beta.vercel.app/" }  
+                git={ "https://github.com/miloIsNotAvailable/notesApp" }
             />
             <ProcessLayout arr={ arr } />
         </div>

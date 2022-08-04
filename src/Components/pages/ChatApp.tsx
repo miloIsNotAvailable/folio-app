@@ -15,16 +15,14 @@ const ChatApp: FC = () => {
 
     return (
         <div className={ styles.pages_wrap }>
-            <Link to="/">
-                go back
-            </Link>
             {/* change that to useContext instead of props */}
             <ProjectLayout 
                 desc={ "chat app, with options such as voice call, private messaging, which incudes sending messages and edited text using markdown, and custom markdown function for colored text ( ex. :r:your text here:r: will give you red text ). App was made using next.js, socket.io and RxJS for realtime messaging, prisma for database and data menagement, and webRTC for peer to peer voice calls." } 
                 title={ "chat app" }
                 num={ '01' } 
                 img={ Img } 
-                link={ "https://milos-awesomness-app.herokuapp.com/" }  
+                link={ "https://milos-awesomness-app.herokuapp.com/" } 
+                git={ "https://github.com/miloIsNotAvailable/chatApp" } 
             />
             <ProcessLayout arr={ arr } />
         </div>

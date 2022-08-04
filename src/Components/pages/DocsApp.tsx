@@ -15,15 +15,13 @@ const DocsApp: FC = () => {
 
     return (
         <div className={ styles.pages_wrap }>
-            <Link to="/">
-                go back
-            </Link>
             <ProjectLayout 
                 desc={ "online text editor, with basic functions(such as changing font, font size, font weight) that uses LSTM model to generate text from already existing content. Project was made using flask for the ai api, Express(typescript) for backend, and React(typescript) for frontend with SQL, graphql, and RTK Query for managing data and redux for state management" } 
                 title={ "docs app" }
                 num={ '03' } 
                 img={ Img }   
                 link={ "https://docs-app-miloisnotavailable.vercel.app/" }
+                git={ "https://github.com/miloIsNotAvailable/docs-app" }
             />
             <ProcessLayout arr={ arr } />
         </div>

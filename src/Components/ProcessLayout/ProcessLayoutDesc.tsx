@@ -16,7 +16,7 @@ const ProcessLayoutDesc: FC = () => {
                     process.
                 </motion.div>
             </div>
-            <div className={ styles.process_desc_desc }>
+            {/* <div className={ styles.process_desc_desc }>
                 <motion.div
                     transition={ { delay: 1, duration: 1, ease: [0.785, 0.265, 0.225, 0.900] } }
                     initial={ { transform: 'translate( 0, 100% )' } }
@@ -25,7 +25,7 @@ const ProcessLayoutDesc: FC = () => {
                 >
                     Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining            
                 </motion.div>
-            </div>
+            </div> */}
         </div> 
     )
 }

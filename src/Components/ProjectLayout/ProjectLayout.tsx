@@ -10,6 +10,7 @@ interface ProjectLayoutProps {
     desc: string
     img: string
     link: string
+    git?: string
 }
 
 const ProjectLayout: FC<ProjectLayoutProps> = ( { 
@@ -17,7 +18,8 @@ const ProjectLayout: FC<ProjectLayoutProps> = ( {
     num,
     title,
     img,
-    link
+    link,
+    git
  } ) => {
 
     return (
@@ -36,7 +38,7 @@ const ProjectLayout: FC<ProjectLayoutProps> = ( {
             </div>
             <div className={ styles.project_body_wrap }>
                 <ProjectImg img={ img }/>
-                <ProjectDesc desc={ desc } link={ link }/>
+                <ProjectDesc desc={ desc } link={ link } git={ git }/>
             </div>
         </div>
     )
