@@ -16,7 +16,7 @@ const AboutCardTitle: FC = () => {
             animate={ { transform: 'translate( 0, 0% )' } }
             exit={ { transform: 'translate( 0, -100% )' } }
            >
-            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.
+                I started webdev in february of 2021, and I loved it ever since. From designing websites and web apps, to actually creating them, and making them work... 
            </motion.div>
         </div>
     )
