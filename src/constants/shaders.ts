@@ -12,7 +12,7 @@ uniform float u_time;
 // uniform float u_random;
 
 const int MAX_MARCHING_STEPS = 255;
-const float MAX_HIT_DIST = 1024.;
+const float MAX_HIT_DIST = 256.;
 const float EPSILON = 0.003;
 
 float map(float value, float inMin, float inMax, float outMin, float outMax) {

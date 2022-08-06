@@ -3,11 +3,14 @@ import { styles } from "./BlobCardStyles";
 import { Scene, PerspectiveCamera, WebGLRenderer, BoxGeometry, MeshBasicMaterial, Mesh, PlaneGeometry, ShaderMaterial, Vector2 } from 'three'
 import { frag, vert } from "../../constants/shaders";
 import { motion } from 'framer-motion'
+import { useLocation } from "react-router-dom";
 
 const BlobCard: FC = () => {
 
     const blobRef = useRef<HTMLDivElement | null>( null )
     const [ { height, width }, setParams ] = useState<{ width: number, height: number }>( { width: 0, height: 0 } )
+
+    const { pathname } = useLocation()
 
     useEffect( () => {
         if( !blobRef.current ) return
@@ -52,14 +55,20 @@ const BlobCard: FC = () => {
 
         camera.position.z = 1;
 
+        const render = () => {
+            renderer.render( scene, camera );
+        }
+
         let delta = 0;
         function animate() {
             delta += .02;
             material.uniforms.u_time.value = delta
             requestAnimationFrame( animate );
-            renderer.render( scene, camera );
+            render()
         }
         animate();
+
+        // pathname !== "/" && renderer.dispose()
 
     }, [ blobRef.current ] )
 
