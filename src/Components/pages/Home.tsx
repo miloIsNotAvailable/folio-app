@@ -6,7 +6,12 @@ import { styles } from "./PagesStyles";
 import SelectedProjects from "../SelectedProjects";
 import DescriptionCard from "../DescriptionCard";
 import { useLocation } from "react-router-dom";
-const BlobCard = lazy( () => import( '../BlobCard' ) )
+const BlobCard = lazy(() => {
+    return new Promise(resolve => setTimeout(resolve, 2000)).then(
+      () => import("../BlobCard")
+    );
+  });
+  
 
 const Home: FC = () => {
 
@@ -15,8 +20,9 @@ const Home: FC = () => {
     return (
         <div className={ styles.pages_wrap }>
             <TitleCard/> 
-            { pathname === "/" ? <BlobCard/> : <></> }
-            {/* <BlobCard/> */}
+            <Suspense fallback={ <div></div> }>
+                <BlobCard/>
+            </Suspense>
             <NavCard/>
             <SelectedProjects/>
             <DescriptionCard/>

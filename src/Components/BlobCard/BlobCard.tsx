@@ -2,15 +2,21 @@ import { FC, useCallback, useEffect, useRef, useState } from "react";
 import { styles } from "./BlobCardStyles";
 import { Scene, PerspectiveCamera, WebGLRenderer, BoxGeometry, MeshBasicMaterial, Mesh, PlaneGeometry, ShaderMaterial, Vector2 } from 'three'
 import { frag, vert } from "../../constants/shaders";
-import { motion } from 'framer-motion'
+import { motion, useInView } from 'framer-motion'
 import { useLocation } from "react-router-dom";
 
 const BlobCard: FC = () => {
 
     const blobRef = useRef<HTMLDivElement | null>( null )
     const [ { height, width }, setParams ] = useState<{ width: number, height: number }>( { width: 0, height: 0 } )
+    const [ canRender, setCanRender ] = useState( false )
 
     const { pathname } = useLocation()
+    const isInView = useInView( blobRef )
+
+    useEffect( () => {
+        setCanRender( pathname === "/" )
+    }, [ pathname ] )
 
     useEffect( () => {
         if( !blobRef.current ) return
@@ -60,26 +66,38 @@ const BlobCard: FC = () => {
         }
 
         let delta = 0;
+        let reqId: number | undefined = undefined;
+        
         function animate() {
+            reqId = undefined
             delta += .02;
             material.uniforms.u_time.value = delta
-            requestAnimationFrame( animate );
+            
+            reqId = requestAnimationFrame( animate );
             render()
+
+            if( window.location.pathname !== "/" && reqId ) {
+                cancelAnimationFrame( reqId! )
+                // reqId = undefined
+                delta = 0;
+            }
         }
-        animate();
+        animate()
 
-        // pathname !== "/" && renderer.dispose()
-
-    }, [ blobRef.current ] )
+    }, [ blobRef.current, canRender, pathname ] )
 
     return (
-        <div className={ styles.blob_card }>
+        <motion.div className={ styles.blob_card }
+            initial={ { opacity: 0 } }
+            animate={ { opacity: 1 } }
+            exit={ { opacity: 0 } }
+        >
             <div
                 ref={ blobRef }
                 className={ styles.blob_card_wrap }
             >
             </div>
-        </div>
+        </motion.div>
     )
 }
 
