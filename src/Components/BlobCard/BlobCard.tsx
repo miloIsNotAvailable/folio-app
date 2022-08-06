@@ -1,4 +1,4 @@
-import { FC, useCallback, useEffect, useRef, useState } from "react";
+import { FC, useEffect, useRef, useState } from "react";
 import { styles } from "./BlobCardStyles";
 import { Scene, PerspectiveCamera, WebGLRenderer, BoxGeometry, MeshBasicMaterial, Mesh, PlaneGeometry, ShaderMaterial, Vector2 } from 'three'
 import { frag, vert } from "../../constants/shaders";
@@ -12,7 +12,6 @@ const BlobCard: FC = () => {
     const [ canRender, setCanRender ] = useState( false )
 
     const { pathname } = useLocation()
-    const isInView = useInView( blobRef )
 
     useEffect( () => {
         setCanRender( pathname === "/" )
@@ -21,8 +20,8 @@ const BlobCard: FC = () => {
     useEffect( () => {
         if( !blobRef.current ) return
         setParams( {
-            width: blobRef.current!.offsetWidth,
-            height: blobRef.current!.offsetHeight,
+            width: window.innerWidth < 600 ? 16/9 * blobRef.current.clientHeight : blobRef.current!.clientWidth,
+            height: blobRef.current!.clientHeight,
         } )
     }, [ blobRef.current?.offsetWidth ] )
 

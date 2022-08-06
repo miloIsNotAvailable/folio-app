@@ -32,3 +32,11 @@
     font-family: 'Radio Grotesk';
     padding: .2rem;
 }
+
+.fallback {
+    display: grid;
+    place-items: center;
+    font-family: 'Gosha Sans';
+    width: 100vw;
+    height: 100vh;
+}

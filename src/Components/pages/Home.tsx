@@ -12,7 +12,6 @@ const BlobCard = lazy(() => {
     );
   });
   
-
 const Home: FC = () => {
 
     const { pathname } = useLocation()
@@ -20,7 +19,11 @@ const Home: FC = () => {
     return (
         <div className={ styles.pages_wrap }>
             <TitleCard/> 
-            <Suspense fallback={ <div></div> }>
+            <Suspense fallback={ 
+                <div className={ styles.fallback }>
+                    
+                </div> 
+            }>
                 <BlobCard/>
             </Suspense>
             <NavCard/>
