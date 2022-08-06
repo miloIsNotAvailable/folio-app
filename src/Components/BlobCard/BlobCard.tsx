@@ -20,7 +20,7 @@ const BlobCard: FC = () => {
     useEffect( () => {
         if( !blobRef.current ) return
         setParams( {
-            width: window.innerWidth < 600 ? 16/9 * blobRef.current.clientHeight : blobRef.current!.clientWidth,
+            width: blobRef.current!.clientWidth,
             height: blobRef.current!.clientHeight,
         } )
     }, [ blobRef.current?.offsetWidth ] )
