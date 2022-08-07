@@ -26,7 +26,7 @@ const BlobCard: FC = () => {
     }, [ blobRef.current?.offsetWidth ] )
 
     useEffect( () => {
-        if( !blobRef.current ) return
+        if( !blobRef.current || window.innerWidth < 600 ) return
 
         // const width = blobRef.current.offsetWidth;
         // const height = blobRef.current.offsetHeight;
@@ -84,6 +84,10 @@ const BlobCard: FC = () => {
         animate()
 
     }, [ blobRef.current, canRender, pathname ] )
+
+    if( window.innerWidth < 600 ) return (
+        <></>
+    )
 
     return (
         <motion.div className={ styles.blob_card }
